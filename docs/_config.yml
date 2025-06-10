@@ -1,0 +1,53 @@
+title: Tarsier
+description: "Cognitive sensing project for AI, LLM and agents - The foundation stone of cognitive computation"
+url: "https://tarsier.ai"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Site settings
+author:
+  name: Tarsier Team
+  email: hello@tarsier.ai
+
+# Social links
+github_username: tarsier-ai
+twitter_username: tarsier_ai
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Collections
+collections:
+  modules:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "modules"
+    values:
+      layout: "module" 
