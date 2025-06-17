@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "tarsier"
+version = "0.1.0"
+description = "A library for web search and data extraction using headless browsers"
+authors = ["Xiaming Chen <xiamingc@mirasurf.cn>"]
+readme = "README.md"
+packages = [{include = "tarsier"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Crawl4AI = "^0.6.3"
+unstructured = "^0.17.0"
+meilisearch = "^0.34.0"
+qdrant-client = "^1.14.0"
+beautifulsoup4 = "^4.13.0"
+requests = "^2.32.0"
+python-dotenv = "^1.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+black = "^23.7.0"
+isort = "^5.12.0"
+mypy = "^1.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api" 

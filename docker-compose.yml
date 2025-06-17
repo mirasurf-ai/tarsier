@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  tarsier:
+    build: .
+    environment:
+      - MEILI_URL=http://meilisearch:7700
+      - QDRANT_URL=http://qdrant:6333
+    depends_on:
+      - meilisearch
+      - qdrant
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.3
+    ports:
+      - "7700:7700"
+    volumes:
+      - meili_data:/meili_data
+    command: meilisearch --master-key=${MEILI_MASTER_KEY:-masterKey} --env=development
+
+  qdrant:
+    image: qdrant/qdrant:v1.7.0
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+volumes:
+  meili_data:
+  qdrant_data: 
